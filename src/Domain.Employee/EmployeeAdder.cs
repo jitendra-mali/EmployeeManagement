@@ -29,7 +29,7 @@ namespace Domain.Employee
             var response = new Response();
             try
             {
-                _logger.LogInformation("Adding Employee");
+                _logger.LogInformation("Adding Employee ");
                 if (employeeAddRequest.PayPerHour != null && employeeAddRequest.SupId != null && employeeAddRequest.ManagerId != null)
                 {
                     employee.FirstName = employeeAddRequest.FirstName;
