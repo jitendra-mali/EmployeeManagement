@@ -28,8 +28,8 @@ jobs:
   second_job:
         needs: first_job
         #runs-on: ${{ first_job.outputs.runner_name }}
-        #runs-on: [self-hosted, "${{ needs.first_job.outputs.runner_name }}"]
-        runs-on: ${{runnername}}
+        runs-on: [self-hosted, "${{ needs.first_job.outputs.runner_name }}"]
+        #runs-on: ${{runnername}}
         steps:
           - name: Verify Runner
             run: echo "This job is running on ${{ runner.name }}"
