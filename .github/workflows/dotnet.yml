@@ -21,7 +21,8 @@ jobs:
             run: echo "Runner name is ${{ runner.name }}"
   second_job:
         needs: first_job
-        runs-on: ${{ needs.first_job.outputs.runner_name }}
+        runs-on: [self-hosted, X64, Windows]
+        # runs-on: ${{ needs.first_job.outputs.runner_name }}
         steps:
           - name: Verify Runner
             run: echo "This job is running on ${{ runner.name }}"
