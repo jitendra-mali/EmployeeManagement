@@ -23,7 +23,8 @@ jobs:
           - name: Set output variable
             run: echo "$runnername = ${{ runner.name }} from output" >> $GITHUB_OUTPUT
           - name: Get Runner Name
-            run: echo "Runner name is ${{ runner.name }}"
+            #run: echo "Runner name is ${{ runner.name }}"
+            run: echo "Runner name is $runnername"
   second_job:
         needs: first_job
         #runs-on: ${{ first_job.outputs.runner_name }}
