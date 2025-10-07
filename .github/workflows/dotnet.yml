@@ -16,7 +16,8 @@ jobs:
         
         
         name: first job
-        runs-on: [self-hosted, X64, Windows] # Or your specific self-hosted runner label
+        #runs-on: [self-hosted, X64, Windows] # Or your specific self-hosted runner label
+        runs-on: [AR3]
         outputs:
           runner_name: ${{ runner.name }}
         steps:
@@ -28,8 +29,8 @@ jobs:
   second_job:
         needs: first_job
         #runs-on: ${{ first_job.outputs.runner_name }}
-        runs-on: [self-hosted, "${{ needs.first_job.outputs.runner_name }}"]
-        #runs-on: ${{runnername}}
+        #runs-on: [self-hosted, "${{ needs.first_job.outputs.runner_name }}"]
+        runs-on: [AR3]
         steps:
           - name: Verify Runner
             run: echo "This job is running on ${{ runner.name }}"
